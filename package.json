@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
-    "build": "prisma generate && tsc",
-    "start": "node build/server.js"
+    "build": "tsc && prisma generate",
+    "start": "chmod +x start.sh && ./start.sh",
+    "dev": "ts-node src/server.ts",
+    "postinstall": "prisma generate"
   },
   "author": "",
   "license": "ISC",
