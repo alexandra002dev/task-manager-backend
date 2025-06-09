@@ -24,8 +24,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userLogin = exports.userCadastro = void 0;
-const prisma_1 = require("../generated/prisma");
-const prisma = new prisma_1.PrismaClient();
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
