@@ -8,6 +8,7 @@
     "node": "18.x"
   },
   "scripts": {
+    "start": "node dist/server.js",
     "dev": "ts-node-dev src/server.ts",
     "build": "npm install && npx prisma generate && rimraf dist && tsc",
     "deploy": "npx prisma migrate deploy",
