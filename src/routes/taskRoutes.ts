@@ -1,11 +1,11 @@
-import { verifyToken } from "../middleware/auth";
+import { verifyToken } from "../middleware/auth.js";
 import {
   createTask,
   deleteTask,
   getAllTasks,
   updateTask,
-} from "../controllers/tasksControllers";
-import router from "./userRoutes";
+} from "../controllers/tasksControllers.js";
+import router from "./userRoutes.js";
 
 // Middleware para proteger todas as rotas abaixo
 router.use(verifyToken);

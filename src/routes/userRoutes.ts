@@ -1,9 +1,6 @@
 import express from "express";
-import bcrypt from "bcrypt";
-import { PrismaClient } from "../generated/prisma";
-import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { login, userCadastro } from "../controllers/userControllers";
+import { login, userCadastro } from "../controllers/userControllers.js";
 
 const router = express.Router();
 

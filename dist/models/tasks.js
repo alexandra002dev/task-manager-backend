@@ -1,10 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateTask = exports.deleteTask = exports.createTask = exports.getTasks = void 0;
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 // GET - Listar todas as tarefas do usuário
-const getTasks = async (userId) => {
+export const getTasks = async (userId) => {
     try {
         console.log("UserId do token:", userId); // Para debug
         const tasks = await prisma.task.findMany({
@@ -34,9 +31,8 @@ const getTasks = async (userId) => {
         throw new Error("Erro ao buscar tasks");
     }
 };
-exports.getTasks = getTasks;
 // POST - Criar nova tarefa
-const createTask = async (title, userId) => {
+export const createTask = async (title, userId) => {
     try {
         // Validação
         if (!title) {
@@ -58,9 +54,8 @@ const createTask = async (title, userId) => {
         throw new Error("Erro ao criar task");
     }
 };
-exports.createTask = createTask;
 // DELETE - Apagar uma tarefa do usuário
-const deleteTask = async (taskId, userId) => {
+export const deleteTask = async (taskId, userId) => {
     try {
         // Converter string para número
         const taskIdNumber = parseInt(taskId);
@@ -83,9 +78,8 @@ const deleteTask = async (taskId, userId) => {
         throw new Error("Erro ao deletar task");
     }
 };
-exports.deleteTask = deleteTask;
 // PUT - Atualizar uma tarefa do usuário
-const updateTask = async (taskId, title, completed, userId) => {
+export const updateTask = async (taskId, title, completed, userId) => {
     try {
         // Converter string para número
         const taskIdNumber = parseInt(taskId);
@@ -113,4 +107,4 @@ const updateTask = async (taskId, title, completed, userId) => {
         throw new Error("Erro ao atualizar task");
     }
 };
-exports.updateTask = updateTask;
+//# sourceMappingURL=tasks.js.map

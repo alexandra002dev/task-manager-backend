@@ -1,4 +1,4 @@
-import * as Models from "../models/user";
+import * as Models from "../models/users.js";
 export const userCadastro = async (req: any, res: any) => {
   const { name, email, password } = req.body;
   console.log(req.body);

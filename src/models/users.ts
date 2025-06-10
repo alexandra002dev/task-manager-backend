@@ -1,8 +1,8 @@
-const { PrismaClient } = require("@prisma/client");
-
+import { PrismaClient } from "@prisma/client";
+import jwt from "jsonwebtoken";
 const prisma = new PrismaClient();
 import bcrypt from "bcrypt";
-const jwt = require("jsonwebtoken");
+
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) {
   throw new Error("JWT_SECRET não está definido nas variáveis de ambiente");

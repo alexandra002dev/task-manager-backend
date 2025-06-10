@@ -1,15 +1,11 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
-const userControllers_1 = require("../controllers/userControllers");
-const router = express_1.default.Router();
-dotenv_1.default.config();
+import express from "express";
+import dotenv from "dotenv";
+import { login, userCadastro } from "../controllers/userControllers.js";
+const router = express.Router();
+dotenv.config();
 // Rota de cadastro
-router.post("/register", userControllers_1.userCadastro);
+router.post("/register", userCadastro);
 // Rota de login
-router.post("/login", userControllers_1.login);
-exports.default = router;
+router.post("/login", login);
+export default router;
+//# sourceMappingURL=userRoutes.js.map

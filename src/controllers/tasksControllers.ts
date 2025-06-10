@@ -1,4 +1,4 @@
-import * as tasksControllers from "../models/tasks";
+import * as tasksControllers from "../models/tasks.js";
 
 // GET - Listar todas as tarefas do usuário
 export const getAllTasks = async (req: any, res: any) => {

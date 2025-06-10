@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.verifyToken = void 0;
-const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const verifyToken = (req, res, next) => {
+import jwt from "jsonwebtoken";
+export const verifyToken = (req, res, next) => {
     try {
         const authHeader = req.headers["authorization"];
         const token = authHeader && authHeader.split(" ")[1]; // Bearer TOKEN
@@ -18,7 +12,7 @@ const verifyToken = (req, res, next) => {
             res.status(500).json({ error: "Configuração do servidor inválida" });
             return;
         }
-        const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
+        const decoded = jwt.verify(token, JWT_SECRET);
         req.userId = decoded.userId;
         req.userEmail = decoded.email;
         next();
@@ -29,4 +23,4 @@ const verifyToken = (req, res, next) => {
         return;
     }
 };
-exports.verifyToken = verifyToken;
+//# sourceMappingURL=auth.js.map
