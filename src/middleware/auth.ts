@@ -6,11 +6,7 @@ interface AuthRequest extends Request {
   userEmail?: string;
 }
 
-export const verifyToken = (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction
-) => {
+export const verifyToken = (req: any, res: any, next: any) => {
   try {
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1]; // Bearer TOKEN
