@@ -2,7 +2,7 @@
   "name": "task-manager-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "type": "module",
   "engines": {
     "node": "22.x"
@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.ts"
+    "start": "node src/server.js",
+    "vercel-build": "echo 'No build step required'"
   },
   "author": "",
   "license": "ISC",

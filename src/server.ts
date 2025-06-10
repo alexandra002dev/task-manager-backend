@@ -1,6 +1,7 @@
 import express from "express";
 import userRoutes from "./routes/userRoutes";
 import taskRoutes from "./routes/taskRoutes";
+
 const server = express();
 const cors = require("cors");
 
@@ -15,9 +16,13 @@ server.use(
 );
 
 // Importa as rotas
+server.get("/", (req, res) => {
+  res.json({ message: "Task Manager API is running!" });
+});
 server.use("/api", userRoutes);
 server.use("/api/tasks", taskRoutes);
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log("server is running on port 4000");
 });
+export default server;
