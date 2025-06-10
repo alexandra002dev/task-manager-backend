@@ -11,9 +11,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(cors());
 
 // Importa as rotas
-server.get("/", (req, res) => {
-  res.json({ message: "Task Manager API is running!" });
-});
+
 server.use("/api", userRoutes);
 server.use("/api/tasks", taskRoutes);
 const PORT = process.env.PORT || 4000;
