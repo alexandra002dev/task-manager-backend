@@ -1,9 +1,9 @@
 import express from "express";
 import userRoutes from "./routes/userRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
-import cors from "cors";
-const server = express();
 
+const server = express();
+const cors = require("cors");
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
