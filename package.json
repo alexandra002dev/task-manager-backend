@@ -10,14 +10,12 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
-    "start": "node src/server.js",
-    "vercel-build": "echo 'No build step required'"
+    "start": "node src/server.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
-    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.15.30",
