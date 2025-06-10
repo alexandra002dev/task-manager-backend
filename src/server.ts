@@ -1,19 +1,14 @@
 import express from "express";
-import userRoutes from "./routes/userRoutes";
-import taskRoutes from "./routes/taskRoutes";
-
+import userRoutes from "./routes/userRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
+import cors from "cors";
 const server = express();
-const cors = require("cors");
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 // Caso queira permitir só o frontend:
-server.use(
-  cors({
-    origin: "http://localhost:3000", // ou seu domínio de produção depois
-  })
-);
+server.use(cors());
 
 // Importa as rotas
 server.get("/", (req, res) => {
@@ -23,6 +18,6 @@ server.use("/api", userRoutes);
 server.use("/api/tasks", taskRoutes);
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
-  console.log("server is running on port 4000");
+  console.log(`server is running on port ${PORT}`);
 });
 export default server;
