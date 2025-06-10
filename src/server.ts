@@ -1,6 +1,6 @@
 import express from "express";
-import userRoutes from "./routes/userRoutes.js";
-import taskRoutes from "./routes/taskRoutes.js";
+import userRoutes from "./routes/userRoutes";
+import taskRoutes from "./routes/taskRoutes";
 
 const server = express();
 const cors = require("cors");
