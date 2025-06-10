@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "build": "rimraf dist && tsc",
+    "build": "prisma generate && rimraf dist && tsc",
     "start": "node dist/server.js",
     "postinstall": "prisma generate"
   },

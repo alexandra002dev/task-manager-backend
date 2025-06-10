@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 // GET - Listar todas as tarefas do usuário
 export const getTasks = async (userId) => {
